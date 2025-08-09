@@ -1,0 +1,59 @@
+Assay Definition
+
+Assay Description:
+1L BABY Experiment standard count, beginning with run 1L-3
+Assay Type: DPM (Single)
+Report Name: Standard report
+Output Data Path: C:\Packard\TriCarb\Results\Default\NEW_Flibe_Long\Various
+Raw Results Path: C:\Packard\Tricarb\Results\Default\NEW_Flibe_Long\20250714_2344\20250714_2344.results
+Comma-Delimited File Name: C:\Packard\TriCarb\Results\Default\NEW_Flibe_Long\Various\1L_11_ULTRA_LONG_TEST.csv
+Assay File Name: C:\Packard\TriCarb\Assays\NEW_Flibe_Long.lsa
+
+Additional Data Files Generated with this Protocol:
+Standard report
+		[Excel]	1L_11_ULTRA_LONG_TEST.csv
+
+
+Count Conditions
+
+Nuclide: LIBRA UG LLT NM      
+   Quench Indicator: tSIE
+   External Std Terminator (sec): 0.5 2s%
+   Pre-Count Delay (min): 0.00
+Quench Set:                   
+   Low Energy: 3H-UG-LLT-NM-C
+Count Time (min): 500.00
+Count Mode: Normal                                          
+Assay Count Cycles: 1         Repeat Sample Count: 1        
+Number of Vials/Sample: 1     Calculate % Reference: Off                                  
+
+
+Background Subtract: Off
+Low CPM Threshold: Off
+2 Sigma % Terminator: Off
+
+Regions         LL       UL
+A              0.5      5.0
+B              0.5     10.0
+C              0.0     18.6
+
+
+Count Corrections
+
+Static Controller: On         Luminescence Correction: On     GCT: n/a
+Colored Samples: Off          Heterogeneity Monitor: Off      PAC: Disabled
+Coincidence Time (nsec): 18   Delay Before Burst (nsec): 75   PAC Strength: n/a   Auxiliary Spectrum: n/a
+
+
+S#,SMPL_ID,Bq:1,CPMA,A:2S%,LUM,tSIE,Eff Nuc1 In A,Count Time,DPM1
+1,BLANK,0.271,4.060,4.50,0,290.50,25.01,500,16.236
+Missing vial 2.
+3,1L-OV_11-7-3,0.459,7.062,3.40,0,298.22,25.67,500,27.513
+Missing vial 4.
+5,1L-OV_11-7-1,0.206,3.700,4.73,0,366.33,29.99,500,12.336
+Missing vial 6.
+7,1L-IV_11-8-3,0.469,7.082,3.39,0,292.09,25.14,500,28.168
+Missing vial 8.
+9,1L-IV_11-8-1,0.222,3.800,4.66,0,340.67,28.59,500,13.290
+Missing vial 10.
+11,SLR_BL11,0.310,4.352,4.34,0,272.30,23.41,500,18.594

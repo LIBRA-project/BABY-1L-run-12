@@ -1,0 +1,58 @@
+Assay Definition
+
+Assay Description:
+1L BABY Experiment short count, beginning with run 1L-8
+Assay Type: DPM (Single)
+Report Name: Standard report
+Output Data Path: C:\Packard\Tricarb\Results\Default\LIBRA_short\20250805_0644
+Raw Results Path: C:\Packard\Tricarb\Results\Default\LIBRA_short\20250805_0644\20250805_0644.results
+Comma-Delimited File Name: C:\Packard\Tricarb\Results\Default\LIBRA_short\20250805_0644\1L_IV_12-1_OV_12-1_LONG.csv
+Assay File Name: C:\Packard\TriCarb\Assays\LIBRA_short.lsa
+
+Additional Data Files Generated with this Protocol:
+Standard report
+		[Excel]	1L_IV_12-1_OV_12-1_LONG.csv
+
+
+Count Conditions
+
+Nuclide: LIBRA UG LLT NM      
+   Quench Indicator: tSIE
+   External Std Terminator (sec): 0.5 2s%
+   Pre-Count Delay (min): 0.00
+Quench Set:                   
+   Low Energy: 3H-UG-LLT-NM-C
+Count Time (min): 100.00
+Count Mode: Normal                                          
+Assay Count Cycles: 1         Repeat Sample Count: 1        
+Number of Vials/Sample: 1     Calculate % Reference: Off                                  
+
+
+Background Subtract: Off
+Low CPM Threshold: Off
+2 Sigma % Terminator: Off
+
+Regions         LL       UL
+A              0.5      5.0
+B              0.5     10.0
+C              0.0     18.6
+
+
+Count Corrections
+
+Static Controller: On         Luminescence Correction: On     GCT: n/a
+Colored Samples: Off          Heterogeneity Monitor: Off      PAC: Disabled
+Coincidence Time (nsec): 18   Delay Before Burst (nsec): 75   PAC Strength: n/a   Auxiliary Spectrum: n/a
+
+
+S#,SMPL_ID,Bq:1,CPMA,A:2S%,LUM,tSIE,Eff Nuc1 In A,Count Time,DPM1
+1,1L-IV_12-1-1,0.282,4.350,9.68,0,299.17,25.75,100,16.894
+2,1L-IV_12-1-2,0.244,3.720,10.48,0,295.10,25.40,100,14.645
+3,1L-IV_12-1-3,38.500,631.370,0.80,0,319.30,27.33,100,*****
+4,1L-IV_12-1-4,0.533,8.040,7.09,0,292.12,25.14,100,31.975
+Missing vial 5.
+6,1L-OV_12-1-1,0.288,4.460,9.55,0,299.47,25.78,100,17.303
+7,1L-OV_12-1-2,0.280,4.260,9.78,0,294.87,25.38,100,16.784
+8,1L-OV_12-1-3,0.802,13.080,5.55,0,316.95,27.19,100,48.101
+8/5/2025 6:42:02 PM:  Warning: User Has Modified Count Conditions.
+9,FAIL,0.258,3.930,38.49,0,294.49,25.35,7,15.505
