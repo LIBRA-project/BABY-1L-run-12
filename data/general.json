@@ -1,0 +1,421 @@
+{
+    "general_data": {
+        "description": "Pure 1 L ClLiF, clean system test",
+        "run_nb": 12,
+        "salt": "ClLiF",
+        "salt_mass": {
+            "value": 1.88,
+            "unit": "kg"
+        },
+        "temperature_salt": {
+            "value": 685,
+            "unit": "degC",
+            "note": "minimum, temperature is non-uniform"
+        },
+        "purpose_of_run": "High source term test in tritium-free system with H2 in gas"
+    },
+    "cover_gas": {
+        "type": "3.65% H2 in He",
+        "pressure_gas_system": {
+            "value": 10,
+            "unit": "PSIG"
+        },
+        "pressure_gas_crucible": {
+            "value": 3,
+            "unit": "PSIG",
+            "note": "in steady state, downstream from filters"
+        },
+        "flow_rate_sample": {
+            "value": 30,
+            "unit": "SCCM",
+            "changed_to": [
+            ]
+        },
+        "flow_rate_air": {
+            "value": 10,
+            "unit": "SCCM"
+        },
+        "switched_to": [
+        ]
+    },
+    "secondary_gas": {
+        "type": "3.65% H2 in He",
+        "pressure_gas_system": {
+            "value": 10,
+            "unit": "PSIG"
+        },
+        "pressure_gas_crucible": {
+            "value": 3,
+            "unit": "PSIG",
+            "note": "in steady state, downstream from filters"
+        },
+        "flow_rate_sample": {
+            "value": 50,
+            "unit": "SCCM",
+            "changed_to": [
+            ]
+        },
+        "flow_rate_air": {
+            "value": 10,
+            "unit": "SCCM"
+        },
+        "switched_to": [
+        ]
+    },
+    "temperature_profiles": [
+        {
+            "description": "Initial setup",
+            "starting_from_date": "8/4/2025 09:15",
+            "center_heater": {
+                "value": 750,
+                "unit": "degC"
+            },
+            "dip_TC": {
+                "value": 692,
+                "unit": "degC"
+            },
+            "wall_TC": {
+                "value": 685,
+                "unit": "degC"
+            },
+            "furnace": {
+                "value": 673,
+                "unit": "degC"
+            },
+            "outside_OV_wall": {
+                "value": 488,
+                "unit": "degC"
+            },
+            "epoxy_top": {
+                "value": 72,
+                "unit": "degC"
+            },
+            "epoxy_bottom": {
+                "value": 48,
+                "unit": "degC"
+            }
+        }
+    ],
+    "generators": [
+        {
+            "name": "nGen-400",
+            "enabled": true,
+            "anode_voltage": {
+                "value": 120,
+                "unit": "kV"
+            },
+            "anode_current": {
+                "value": 350,
+                "unit": "uA"
+            },
+            "periods": [
+                {
+                    "start": "8/4/2025 10:03",
+                    "end": "8/4/2025 13:03"
+                }
+            ]
+        }
+    ],
+    "notes": "nGen positioned under the work surface, at an angle to the long edge of the epoxy table. Target plane aligned with the axis of the vessel, axis of the generator perpendicular to the axis of the vessel. Center of target plane at a distance of 5.5 cm under the bottom of the epoxy plate. Striking at 160 kV and immediately reduced to 120 kV as target current reached.",
+    "shielding": {
+        "enabled": false,
+        "placed_on": null,
+        "removed_on": null,
+        "notes": null
+    },
+    "other_irradiations": {
+        "present": true,
+        "periods": [
+            {
+                "start": "8/6/2025 14:15",
+                "end": "8/6/2025 15:15",
+                "neutron_time": {
+                    "value": 0.5,
+                    "unit": "h"
+                },
+                "generator": "A-325",
+                "duty_factor": 1.000,
+                "distance": {
+                    "value": 400,
+                    "unit": "cm"
+                },
+                "rate_proxy": "ACC -90 kV, SRC +3 kV",
+                "notes": "SPARC team test of BF3, U23 detectors"
+            }
+        ]
+    },
+    "neutron_detection": {
+        "foils": {
+            "enabled": true,
+            "position": "below target plane, 3 cm from the generator axis.",
+            "materials": [
+                {
+                    "position": null,
+                    "material": null,
+                    "designator": null,
+                    "irradiation_date": "8/4/2025",
+                    "number_of_foils": null,
+                    "distance_to_source": {
+                        "value": 3,
+                        "unit": "cm",
+                        "note": "To generator axis at target plane"
+                    },
+                    "mass": {
+                        "value": null,
+                        "unit": "g"
+                    },
+                    "mass_err": {
+                        "value": null,
+                        "unit": "g"
+                    },
+                    "thickness": {
+                        "value": null,
+                        "unit": "inch"
+                    }
+                },
+                {
+                    "position": null,
+                    "material": "Zr",
+                    "designator": null,
+                    "irradiation_date": "8/4/2025",
+                    "number_of_foils": 8,
+                    "distance_to_source": {
+                        "value": 3,
+                        "unit": "cm"
+                    },
+                    "mass": {
+                        "value": null,
+                        "unit": "g"
+                    },
+                    "mass_err": {
+                        "value": null,
+                        "unit": "g"
+                    },
+                    "thickness": {
+                        "value": null,
+                        "unit": "inch"
+                    }
+                }
+            ]
+        },
+        "diamond": {
+            "enabled": false,
+            "note": null,
+            "position": null
+        },
+        "proton_recoil_telecsope": {
+            "enabled": true,
+            "note": "Unable to set bias on diamond A, only the other three diamonds present. ROSY stopped transmitting after 15 minutes, no further data saved. Other software issues expirienced, such as overplotting on display.",
+            "position": "At target plane, at the level of the generator, pointed orthogonal to generator axis, 15 cm away from the axis to the front face of the diamond casing."
+        }
+    },
+    "timestamps": {
+        "heater": {
+            "on": "3/12/2025 16:37",
+            "off": null
+        },
+        "run_start": "8/4/2025 10:03"
+    },
+    "tritium_blank_set": {
+        "filename": "SLR_BLANK_ULTRA_LONG.csv",
+        "parameter": "tSIE",
+        "blanks": {
+            "SLR_BL2": {
+                "water_volume": {
+                    "value": 2,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "SLR_BL4": {
+                "water_volume": {
+                    "value": 4,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "SLR_BL6": {
+                "water_volume": {
+                    "value": 6,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "SLR_BL8": {
+                "water_volume": {
+                    "value": 8,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "SLR_BL9": {
+                "water_volume": {
+                    "value": 9,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "SLR_BL10": {
+                "water_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            },
+            "SLR_BL11": {
+                "water_volume": {
+                    "value": 11,
+                    "unit": "ml"
+                },
+                "scint_volume": {
+                    "value": 10,
+                    "unit": "ml"
+                }
+            }
+        }
+    },
+    "tritium_detection": {
+        "IV": {
+            "1": {
+                "planned_sample_time": "8/4/2025 16:03",
+                "actual_sample_time": "8/4/2025 16:30",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-1_OV_12-1_LONG.csv",
+                    "2": "1L_IV_12-1_OV_12-1_LONG.csv",
+                    "3": "1L_IV_12-1_OV_12-1_LONG.csv",
+                    "4": "1L_IV_12-1_OV_12-1_LONG.csv"
+                }
+            },
+            "2": {
+                "planned_sample_time": "8/4/2025 22:03",
+                "actual_sample_time": "8/4/2025 21:02",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "2": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "3": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "4": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv"
+                }
+            },
+            "3": {
+                "planned_sample_time": "8/5/2025 10:03",
+                "actual_sample_time": "8/5/2025 10:54",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "2": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "3": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "4": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv"
+                }
+            },
+            "4": {
+                "planned_sample_time": "8/5/2025 22:03",
+                "actual_sample_time": "8/5/2025 21:17",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "2": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "3": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "4": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv"
+                }
+            },
+            "5": {
+                "planned_sample_time": "8/6/2025 22:03",
+                "actual_sample_time": "8/6/2025 18:02",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "2": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "3": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "4": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv"
+                }
+            },
+            "6": {
+                "planned_sample_time": "8/8/2025 10:03",
+                "actual_sample_time": "8/8/2025 09:36",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-6_OV_12-6_LONG.csv",
+                    "2": "1L_IV_12-6_OV_12-6_LONG.csv",
+                    "3": "1L_IV_12-6_OV_12-6_LONG.csv",
+                    "4": "1L_IV_12-6_OV_12-6_LONG.csv"
+                }
+            }
+        },
+        "OV": {
+            "1": {
+                "planned_sample_time": "8/4/2025 16:03",
+                "actual_sample_time": "8/4/2025 16:30",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-1_OV_12-1_LONG.csv",
+                    "2": "1L_IV_12-1_OV_12-1_LONG.csv",
+                    "3": "1L_IV_12-1_OV_12-1_LONG.csv",
+                    "4": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv"
+                }
+            },
+            "2": {
+                "planned_sample_time": "8/4/2025 22:03",
+                "actual_sample_time": "8/4/2025 21:02",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "2": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "3": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "4": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv"
+                }
+            },
+            "3": {
+                "planned_sample_time": "8/5/2025 10:03",
+                "actual_sample_time": "8/5/2025 10:54",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "2": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "3": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv",
+                    "4": "1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv"
+                }
+            },
+            "4": {
+                "planned_sample_time": "8/5/2025 22:03",
+                "actual_sample_time": "8/5/2025 21:17",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "2": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "3": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "4": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv"
+                }
+            },
+            "5": {
+                "planned_sample_time": "8/6/2025 22:03",
+                "actual_sample_time": "8/6/2025 18:02",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "2": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "3": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv",
+                    "4": "1L_IV_12-4_12-5_OV_12-4_12-5_LONG.csv"
+                }
+            },
+            "6": {
+                "planned_sample_time": "8/8/2025 10:03",
+                "actual_sample_time": "8/8/2025 09:36",
+                "lsc_vials_filenames": {
+                    "1": "1L_IV_12-6_OV_12-6_LONG.csv",
+                    "2": "1L_IV_12-6_OV_12-6_LONG.csv",
+                    "3": "1L_IV_12-6_OV_12-6_LONG.csv",
+                    "4": "1L_IV_12-6_OV_12-6_LONG.csv"
+                }
+            }
+        }
+    }
+}
