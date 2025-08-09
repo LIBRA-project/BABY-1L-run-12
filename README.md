@@ -4,7 +4,7 @@
 
 This is a template repository for experimental runs of LIBRA.
 
-This repository has the data for the run [**insert run name**].
+This repository has the data for the run BABY 1L Run #12.
 
 ## How to reproduce the results
 
@@ -20,7 +20,7 @@ This repository has the data for the run [**insert run name**].
 conda env create -f environment.yml
 ```
 
-2. Run the notebooks with the created environment `[INSERT NAME OF ENV]`
+2. Run the notebooks with the created environment `baby-1l-run-12`
 
 ## Todo list:
 - [ ] [Link to Zenodo](https://zenodo.org/)
