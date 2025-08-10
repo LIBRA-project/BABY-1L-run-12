@@ -415,6 +415,16 @@
                     "3": "1L_IV_12-6_OV_12-6_LONG.csv",
                     "4": "1L_IV_12-6_OV_12-6_LONG.csv"
                 }
+            },
+            "7": {
+                "planned_sample_time": "8/10/2025 10:03",
+                "actual_sample_time": "8/10/2025 09:18",
+                "lsc_vials_filenames": {
+                    "1": "1L_OV_12-7_LONG.csv",
+                    "2": "1L_OV_12-7_LONG.csv",
+                    "3": "1L_OV_12-7_LONG.csv",
+                    "4": "1L_OV_12-7_LONG.csv"
+                }
             }
         }
     }
