@@ -282,7 +282,7 @@ measured_TBR = ((T_produced_IV + T_produced_OV) / quantity_to_activity(T_consume
 )
 
 # Run 1 transport coeff and measured TBR for overlay
-optimised_ratio = 0.055
+optimised_ratio = 0.0635
 k_top = 2.5 * 12 * 1.45 * 8.9e-8 * ureg.m * ureg.s**-1
 # k_top = 2.8 * 8.9e-8 * ureg.m * ureg.s**-1 # Plausible OV curve fit
 k_wall = optimised_ratio * k_top
