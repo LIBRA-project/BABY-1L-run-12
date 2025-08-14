@@ -16,7 +16,7 @@ dependencies:
   - pint
   - pip
   - pip:
-      - libra-toolbox>=0.9
+      - libra-toolbox>=0.9.1
       - openmc_data_downloader
       - matplotlib-label-lines
       - h-transport-materials
