@@ -190,8 +190,8 @@ sampling_times = {
     "OV": sorted(OV_stream.relative_times_as_pint),
 }
 
-replacement_times_top = sampling_times["IV"]
-replacement_times_walls = sampling_times["OV"]
+replacement_times_top = ureg.Quantity.from_list(sampling_times["IV"])
+replacement_times_walls = ureg.Quantity.from_list(sampling_times["OV"])
 
 # read gas change time
 gas_switch_deltatimes = []

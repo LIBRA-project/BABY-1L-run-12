@@ -11,6 +11,8 @@ from tritium_model import (
     k_top,
     baby_model,
     measured_TBR,
+    replacement_times_top,
+    replacement_times_walls,
 )
 
 # Create global variables
@@ -66,7 +68,7 @@ blocks.append(soluble_vs_insoluble_1)
 iv_bubbler_23 = pathview.custom_pathsim_blocks.Bubbler(
     conversion_efficiency=conversion_efficiency,
     vial_efficiency=collection_efficiency,
-    replacement_times=np.array([0.4, 0.6, 1, 1.5, 2.5, 4]) * 24 * 3600,
+    replacement_times=replacement_times_top.to("s").magnitude,
 )
 events_iv_bubbler_23 = iv_bubbler_23.create_reset_events()
 events += events_iv_bubbler_23
@@ -84,7 +86,7 @@ blocks.append(soluble_vs_insoluble_25)
 ov_bubbler_26 = pathview.custom_pathsim_blocks.Bubbler(
     conversion_efficiency=conversion_efficiency,
     vial_efficiency=collection_efficiency,
-    replacement_times=np.array([1, 2.5, 4]) * 24 * 3600,
+    replacement_times=replacement_times_walls.to("s").magnitude,
 )
 events_ov_bubbler_26 = ov_bubbler_26.create_reset_events()
 events += events_ov_bubbler_26
