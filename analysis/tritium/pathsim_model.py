@@ -7,6 +7,7 @@ import pathview
 from tritium_model import (
     neutron_rate,
     total_irradiation_time,
+    k_wall,
     k_top,
     baby_model,
     measured_TBR,
@@ -16,10 +17,8 @@ from tritium_model import (
 A_OV = (baby_model.A_wall.to("m^2")).magnitude
 A_IV = (baby_model.A_top.to("m^2")).magnitude
 baby_vol = (baby_model.volume.to("m^3")).magnitude
-IV_to_OV_ratio = 70 / 12
-k_IV = k_top.to("m/s").magnitude * 0.6
-k_OV = k_IV / (IV_to_OV_ratio)
-# neutron_rate = (350 / 250) * 1.3e09
+k_IV = k_top.to("m/s").magnitude
+k_OV = k_wall.to("m/s").magnitude
 neutron_rate = neutron_rate.to("n/s").magnitude
 irradiation_time = total_irradiation_time.to("s").magnitude
 
@@ -27,7 +26,10 @@ irradiation_time = total_irradiation_time.to("s").magnitude
 tbr = measured_TBR.to("dimensionless").magnitude
 
 IV_gas_residence_time = 0.01 * baby_vol / (A_IV * k_IV)
-OV_gas_residence_time = 3 * baby_vol / (A_OV * k_OV)
+OV_gas_residence_time = 2.2 * baby_vol / (A_OV * k_OV)
+
+collection_efficiency = 0.95
+conversion_efficiency = 1
 
 # Create blocks
 blocks, events = [], []
@@ -60,8 +62,8 @@ soluble_vs_insoluble_1 = pathview.custom_pathsim_blocks.Splitter2(f1=0.01, f2=0.
 blocks.append(soluble_vs_insoluble_1)
 
 iv_bubbler_23 = pathview.custom_pathsim_blocks.Bubbler(
-    conversion_efficiency=0.95,
-    vial_efficiency=0.9,
+    conversion_efficiency=conversion_efficiency,
+    vial_efficiency=collection_efficiency,
     replacement_times=np.array([0.4, 0.6, 1, 1.5, 2.5, 4]) * 24 * 3600,
 )
 events_iv_bubbler_23 = iv_bubbler_23.create_reset_events()
@@ -69,7 +71,8 @@ events += events_iv_bubbler_23
 blocks.append(iv_bubbler_23)
 
 iv_vs_ov_24 = pathview.custom_pathsim_blocks.Splitter2(
-    f1=k_IV / (k_IV + k_OV), f2=k_OV / (k_IV + k_OV)
+    f1=A_IV * k_IV / (A_IV * k_IV + A_OV * k_OV),
+    f2=A_OV * k_OV / (A_IV * k_IV + A_OV * k_OV),
 )
 blocks.append(iv_vs_ov_24)
 
@@ -77,8 +80,8 @@ soluble_vs_insoluble_25 = pathview.custom_pathsim_blocks.Splitter2(f1=0.01, f2=0
 blocks.append(soluble_vs_insoluble_25)
 
 ov_bubbler_26 = pathview.custom_pathsim_blocks.Bubbler(
-    conversion_efficiency=0.95,
-    vial_efficiency=0.9,
+    conversion_efficiency=conversion_efficiency,
+    vial_efficiency=collection_efficiency,
     replacement_times=np.array([1, 2.5, 4]) * 24 * 3600,
 )
 events_ov_bubbler_26 = ov_bubbler_26.create_reset_events()
