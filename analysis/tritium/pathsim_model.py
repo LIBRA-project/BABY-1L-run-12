@@ -25,8 +25,10 @@ irradiation_time = total_irradiation_time.to("s").magnitude
 
 tbr = measured_TBR.to("dimensionless").magnitude
 
-IV_gas_residence_time = 0.01 * baby_vol / (A_IV * k_IV)
+IV_gas_residence_time = 0.1 * baby_vol / (A_IV * k_IV)
 OV_gas_residence_time = 2.2 * baby_vol / (A_OV * k_OV)
+
+baby_residence_time = baby_vol / (k_IV * A_IV + k_OV * A_OV)
 
 collection_efficiency = 0.95
 conversion_efficiency = 1
@@ -44,7 +46,7 @@ tbr_7 = pathsim.blocks.amplifier.Amplifier(gain=tbr)
 blocks.append(tbr_7)
 
 baby_8 = pathview.custom_pathsim_blocks.Process(
-    residence_time=baby_vol / (k_IV * A_IV + k_OV * A_OV),
+    residence_time=baby_residence_time,
 )
 blocks.append(baby_8)
 
