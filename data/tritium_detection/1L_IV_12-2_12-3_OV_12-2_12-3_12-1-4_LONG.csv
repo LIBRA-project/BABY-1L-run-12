@@ -1,0 +1,69 @@
+Assay Definition
+
+Assay Description:
+1L BABY Experiment short count, beginning with run 1L-8
+Assay Type: DPM (Single)
+Report Name: Standard report
+Output Data Path: C:\Packard\Tricarb\Results\Default\LIBRA_short\20250805_2001
+Raw Results Path: C:\Packard\Tricarb\Results\Default\LIBRA_short\20250805_2001\20250805_2001.results
+Comma-Delimited File Name: C:\Packard\Tricarb\Results\Default\LIBRA_short\20250805_2001\1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv
+Assay File Name: C:\Packard\TriCarb\Assays\LIBRA_short.lsa
+
+Additional Data Files Generated with this Protocol:
+Standard report
+		[Excel]	1L_IV_12-2_12-3_OV_12-2_12-3_12-1-4_LONG.csv
+
+
+Count Conditions
+
+Nuclide: LIBRA UG LLT NM      
+   Quench Indicator: tSIE
+   External Std Terminator (sec): 0.5 2s%
+   Pre-Count Delay (min): 0.00
+Quench Set:                   
+   Low Energy: 3H-UG-LLT-NM-C
+Count Time (min): 100.00
+Count Mode: Normal                                          
+Assay Count Cycles: 1         Repeat Sample Count: 1        
+Number of Vials/Sample: 1     Calculate % Reference: Off                                  
+
+
+Background Subtract: Off
+Low CPM Threshold: Off
+2 Sigma % Terminator: Off
+
+Regions         LL       UL
+A              0.5      5.0
+B              0.5     10.0
+C              0.0     18.6
+
+
+Count Corrections
+
+Static Controller: On         Luminescence Correction: On     GCT: n/a
+Colored Samples: Off          Heterogeneity Monitor: Off      PAC: Disabled
+Coincidence Time (nsec): 18   Delay Before Burst (nsec): 75   PAC Strength: n/a   Auxiliary Spectrum: n/a
+
+
+S#,SMPL_ID,Bq:1,CPMA,A:2S%,LUM,tSIE,Eff Nuc1 In A,Count Time,DPM1
+1,1L-IV_12-2-1,0.257,3.920,10.23,0,295.48,25.43,100,15.413
+2,1L-IV_12-2-2,0.292,4.410,9.63,0,292.29,25.16,100,17.528
+3,1L-IV_12-2-3,24.114,395.390,1.01,0,319.23,27.33,100,*****
+4,1L-IV_12-2-4,0.723,10.920,6.07,0,292.44,25.17,100,43.381
+Missing vial 5.
+6,1L-OV_12-2-1,0.273,4.180,9.88,0,296.66,25.53,100,16.370
+7,1L-OV_12-2-2,0.279,4.210,9.79,0,292.34,25.16,100,16.730
+8,1L-OV_12-2-3,1.520,24.750,4.03,0,315.95,27.13,100,91.214
+9,1L-OV_12-2-4,0.275,4.160,9.90,0,292.53,25.18,100,16.521
+Missing vial 10.
+11,1L-IV_12-3-1,0.254,3.940,10.13,0,299.79,25.80,100,15.270
+12,1L-IV_12-3-2,0.278,4.200,9.85,0,293.03,25.22,100,16.651
+13,1L-IV_12-3-3,4.894,79.210,2.25,0,313.45,26.97,100,293.643
+14,1L-IV_12-3-4,0.689,10.280,6.26,0,288.79,24.86,100,41.353
+Missing vial 15.
+16,1L-OV_12-3-1,0.291,4.580,9.39,0,305.04,26.25,100,17.446
+17,1L-OV_12-3-2,0.265,4.000,10.10,0,292.38,25.17,100,15.894
+18,1L-OV_12-3-3,2.658,42.070,3.09,0,306.49,26.38,100,159.490
+19,1L-OV_12-3-4,0.423,6.380,7.94,0,291.78,25.12,100,25.403
+Missing vial 20.
+21,1L-OV_12-1-4,0.291,4.380,9.64,0,291.47,25.09,100,17.458
