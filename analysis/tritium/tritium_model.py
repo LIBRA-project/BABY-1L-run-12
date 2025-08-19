@@ -87,7 +87,7 @@ def get_row_by_label(reader: LSCFileReader, label: str) -> dict:
 
 def substract_scalar_background(sample: LSCSample, background_bq: float) -> None:
     if sample.background_substracted:
-            raise ValueError("Background already substracted")
+        raise ValueError("Background already substracted")
     sample.activity -= background_bq * ureg.Bq
     if sample.activity.magnitude < 0:
         warnings.warn(
@@ -109,7 +109,9 @@ def build_background_curve_from_file(reader: LSCFileReader, blank_labels: list[s
         tSIE_values.append(tSIE)
         Bq_values.append(Bq)
 
-    interpolator = interp1d(tSIE_values, Bq_values, bounds_error=False, fill_value="extrapolate")
+    interpolator = interp1d(
+        tSIE_values, Bq_values, bounds_error=False, fill_value="extrapolate"
+    )
     return interpolator
 
 
@@ -176,9 +178,9 @@ assert len(np.unique(all_quench)) == 1
 for stream in run.streams:
     for sample in stream.samples:
         for lsc_vial in sample.samples:
-            assert (
-                lsc_vial.background_substracted
-            ), f"Background not substracted for {sample}"
+            assert lsc_vial.background_substracted, (
+                f"Background not substracted for {sample}"
+            )
 
 IV_stream = gas_streams["IV"]
 OV_stream = gas_streams["OV"]
@@ -188,8 +190,8 @@ sampling_times = {
     "OV": sorted(OV_stream.relative_times_as_pint),
 }
 
-replacement_times_top = sampling_times["IV"]
-replacement_times_walls = sampling_times["OV"]
+replacement_times_top = ureg.Quantity.from_list(sampling_times["IV"])
+replacement_times_walls = ureg.Quantity.from_list(sampling_times["OV"])
 
 # read gas change time
 gas_switch_deltatimes = []
@@ -199,13 +201,17 @@ if switched_to and isinstance(switched_to, list):
         gas_switch_time = switch.get("gas_switch_time")
         if gas_switch_time:
             try:
-                gas_switch_time_dt = datetime.strptime(gas_switch_time, "%m/%d/%Y %H:%M")
+                gas_switch_time_dt = datetime.strptime(
+                    gas_switch_time, "%m/%d/%Y %H:%M"
+                )
                 gas_switch_deltatime = gas_switch_time_dt - start_time
                 gas_switch_deltatime = gas_switch_deltatime.total_seconds() * ureg.s
                 gas_switch_deltatime = gas_switch_deltatime.to(ureg.day)
                 gas_switch_deltatimes.append(gas_switch_deltatime)
             except Exception as e:
-                warnings.warn(f"Could not parse gas_switch_time '{gas_switch_time}': {e}")
+                warnings.warn(
+                    f"Could not parse gas_switch_time '{gas_switch_time}': {e}"
+                )
 else:
     warnings.warn("'switched_to' is missing, empty, or not a list in 'cover_gas'.")
 
@@ -238,7 +244,9 @@ for generator in general_data["generators"]:
 # Neutron rate
 
 
-neutron_rate = (350/250) * 1.3e09 * ureg.neutron * ureg.s**-1 # based on manufacturer test data for generator settings
+neutron_rate = (
+    (350 / 250) * 1.3e09 * ureg.neutron * ureg.s**-1
+)  # based on manufacturer test data for generator settings
 neutron_rate_uncertainty = 4.9e06 * ureg.neutron * ureg.s**-1
 neutron_rate_relative_uncertainty = (neutron_rate_uncertainty / neutron_rate).to(
     ureg.dimensionless
