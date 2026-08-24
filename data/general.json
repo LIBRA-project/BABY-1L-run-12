@@ -148,55 +148,256 @@
         "foils": {
             "enabled": true,
             "position": "below target plane, 3 cm from the generator axis.",
+            "data_directory": {"HPGe": "250804_1L_BABY_Run12/DAQ"},
+            "data_url": null,
+            "detector_type": ["HPGe"],
             "materials": [
                 {
-                    "position": null,
-                    "material": null,
-                    "designator": null,
+                    "position": "Top foils taped onto bottom of epoxy table, closest to table",
+                    "material": "Zr",
+                    "designator": "Zr Packet #3",
                     "irradiation_date": "8/4/2025",
-                    "number_of_foils": null,
+                    "number_of_foils": 4,
                     "distance_to_source": {
-                        "value": 3,
+                        "value": 6,
                         "unit": "cm",
                         "note": "To generator axis at target plane"
                     },
                     "mass": {
-                        "value": null,
+                        "value": 0.4498,
                         "unit": "g"
                     },
                     "mass_err": {
-                        "value": null,
+                        "value": 0.0002,
                         "unit": "g"
                     },
                     "thickness": {
-                        "value": null,
+                        "value": 0.02,
                         "unit": "inch"
+                    },
+                     "measurement_directory":{
+                        "HPGe": [
+                            "Zirconium3_20250804_1650_count1/UNFILTERED"
+                        ]
                     }
                 },
                 {
-                    "position": null,
-                    "material": "Zr",
-                    "designator": null,
+                    "position": "Top foils taped onto bottom of epoxy table, closest to source",
+                    "material": "Nb",
+                    "designator": "Nb Packet #1",
                     "irradiation_date": "8/4/2025",
-                    "number_of_foils": 8,
+                    "number_of_foils": 2,
                     "distance_to_source": {
-                        "value": 3,
-                        "unit": "cm"
+                        "value": 6,
+                        "unit": "cm",
+                        "note": "To generator axis at target plane"
                     },
                     "mass": {
-                        "value": null,
+                        "value": 0.5678,
                         "unit": "g"
                     },
                     "mass_err": {
-                        "value": null,
+                        "value": 0.0002,
                         "unit": "g"
                     },
                     "thickness": {
-                        "value": null,
+                        "value": 0.02,
                         "unit": "inch"
+                    },
+                    "measurement_directory":{
+                        "HPGe": [
+                            "Niobium1_20250805_1641_back_count1/UNFILTERED",
+                            "Niobium1_20250809_1015_count2/UNFILTERED"
+                        ]
+                    }
+                },
+                {
+                    "position": "Bottom foils placed below generator, top (closest to source in foil packet)",
+                    "material": "Zr",
+                    "designator": "Zr Packet #4",
+                    "irradiation_date": "8/4/2025",
+                    "number_of_foils": 4,
+                    "distance_to_source": {
+                        "value": 4,
+                        "unit": "cm",
+                        "note": "To generator axis at target plane"
+                    },
+                    "mass": {
+                        "value": 0.4539,
+                        "unit": "g"
+                    },
+                    "mass_err": {
+                        "value": 0.0002,
+                        "unit": "g"
+                    },
+                    "thickness": {
+                        "value": 0.02,
+                        "unit": "inch"
+                    },
+                    "measurement_directory":{
+                        "HPGe": [
+                            "Zirconium4_20250805_1005_back_count1/UNFILTERED"
+                        ]
+                    }
+                },
+                {
+                    "position": "Bottom foils placed below generator, bottom (furthest from source in foil packet)",
+                    "material": "Nb",
+                    "designator": "Nb Packet #2",
+                    "irradiation_date": "8/4/2025",
+                    "number_of_foils": 2,
+                    "distance_to_source": {
+                        "value": 6,
+                        "unit": "cm",
+                        "note": "To generator axis at target plane"
+                    },
+                    "mass": {
+                        "value": 1.1000,
+                        "unit": "g"
+                    },
+                    "mass_err": {
+                        "value": 0.0100,
+                        "unit": "g"
+                    },
+                    "thickness": {
+                        "value": 0.01,
+                        "unit": "inch"
+                    },
+                    "measurement_directory":{
+                        "HPGe": [
+                            "Niobium2_20250806_1921_count1/UNFILTERED",
+                            "Niobium2_20250808_1142_count2/UNFILTERED"
+                        ]
                     }
                 }
-            ]
+            ],
+            "background_directory": {
+                "HPGe": "Background_20250807_1241/UNFILTERED"
+            },
+            "check_sources": {
+                "HPGe": {
+                    "Ba133 Count 1": {
+                        "directory": "Ba133_1uCi_2014Mar_count1/UNFILTERED",
+                        "nuclide": "Ba133",
+                        "activity": {
+                            "value": 1.0,
+                        "unit": "uCi",
+                        "date": "2014-03-15"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Ba133 Count 2": {
+                        "directory": "Ba133_1uCi_2014Mar_count2/UNFILTERED",
+                        "nuclide": "Ba133",
+                        "activity": {
+                            "value": 1.0,
+                        "unit": "uCi",
+                        "date": "2014-03-15"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Co60 Count 1": {
+                        "directory": "Co60_0_872uCi_2014Mar19_count1/UNFILTERED",
+                        "nuclide": "Co60",
+                        "activity": {
+                            "value": 0.872,
+                            "unit": "uCi",
+                            "date": "2014-03-19"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Co60 Count 2": {
+                        "directory": "Co60_0_872uCi_2014Mar19_count2/UNFILTERED",
+                        "nuclide": "Co60",
+                        "activity": {
+                            "value": 0.872,
+                            "unit": "uCi",
+                            "date": "2014-03-19"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Cs137 Count 1": {
+                        "directory": "Cs137_9_38uCi_2023Sep29_count1/UNFILTERED",
+                        "nuclide": "Cs137",
+                        "activity": {
+                            "value": 9.38,
+                            "unit": "uCi",
+                            "date": "2023-09-29"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Cs137 Count 2": {
+                        "directory": "Cs137_9_38uCi_2023Sep29_count2/UNFILTERED",
+                        "nuclide": "Cs137",
+                        "activity": {
+                            "value": 9.38,
+                            "unit": "uCi",
+                            "date": "2023-09-29"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Na22 Count 1": {
+                        "directory": "Na22_9_98uCi_2023Sep29_count1/UNFILTERED",
+                        "nuclide": "Na22",
+                        "activity": {
+                            "value": 9.98,
+                            "unit": "uCi",
+                            "date": "2023-09-29"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    },
+                    "Na22 Count 2": {
+                        "directory": "Na22_9_98uCi_2023Sep29_count2/UNFILTERED",
+                        "nuclide": "Na22",
+                        "activity": {
+                            "value": 9.98,
+                            "unit": "uCi",
+                            "date": "2023-09-29"
+                        },
+                        "energies": null,
+                        "intensities": null,
+                        "half_life": {
+                            "value": null,
+                            "unit": null
+                        }
+                    }
+                }
+            }
         },
         "diamond": {
             "enabled": false,
